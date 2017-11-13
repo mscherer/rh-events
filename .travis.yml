@@ -1,9 +1,11 @@
 language: ruby
 rvm:
-- 2.0.0
+- 2.3.0
 install:
 - sudo apt-get update -qq
-- sudo apt-get install rubygems
 - bundle install
+- env
+- rvm env --path
+- bundle info json
 script: bundle exec ./validate.rb
-dist: precise
+dist: xenial
